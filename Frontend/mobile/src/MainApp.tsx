@@ -1,11 +1,14 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import MainNavigation from './Navigation/MainNavigation';
+import {ThemeProvider} from './Context/Theme/ThemeProvider';
 
 function MainApp(): JSX.Element {
   return (
     <NavigationContainer>
-      <MainNavigation />
+      <ThemeProvider>
+        <MainNavigation />
+      </ThemeProvider>
     </NavigationContainer>
   );
 }
