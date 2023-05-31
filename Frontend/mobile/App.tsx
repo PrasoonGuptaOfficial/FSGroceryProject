@@ -8,12 +8,15 @@
 import React from 'react';
 import MainApp from './src/MainApp';
 import {Provider} from 'react-redux';
-import {Store} from './src/Redux/Common/store';
+import {Store, persistorStore} from './src/Redux/Common/store';
+import {PersistGate} from 'redux-persist/integration/react';
 
 function App(): JSX.Element {
   return (
     <Provider store={Store}>
-      <MainApp />
+      <PersistGate loading={null} persistor={persistorStore}>
+        <MainApp />
+      </PersistGate>
     </Provider>
   );
 }
