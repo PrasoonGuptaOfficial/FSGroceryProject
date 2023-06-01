@@ -1,13 +1,18 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import DemoStack from './Demo/DemoStack';
+import SplashStack from '../Stack/Splash/SplashStack';
+import {MainNavigationOption} from './MainNavigationOption';
 
 const MyStack = createStackNavigator();
 
 function MainNavigation(): JSX.Element {
   return (
     <MyStack.Navigator>
-      <MyStack.Screen name="DemoCheck" component={DemoStack} />
+      <MyStack.Screen
+        name="Splash"
+        component={SplashStack}
+        options={MainNavigationOption}
+      />
     </MyStack.Navigator>
   );
 }

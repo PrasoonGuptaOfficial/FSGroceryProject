@@ -1,14 +1,16 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import MainNavigation from './Navigation/MainNavigation';
-import {ThemeProvider} from './Context/Theme/ThemeProvider';
+import MainNavigation from './Navigation/Common/MainNavigation';
+import CommonContext from './Context/Common/CommonContext.index';
+import {StatusBarComp} from './Components/Common/commonComps.index';
 
-function MainApp(): JSX.Element {
+function MainApp(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <ThemeProvider>
+      <CommonContext>
+        <StatusBarComp />
         <MainNavigation />
-      </ThemeProvider>
+      </CommonContext>
     </NavigationContainer>
   );
 }
