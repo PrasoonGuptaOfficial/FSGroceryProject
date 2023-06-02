@@ -3,7 +3,7 @@ import FontDimensionHook from '../../../Hook/Dimension/FontDimensionHook';
 
 const TextContainerStyle = StyleSheet.create({
   container: {
-    fontSize: FontDimensionHook(24),
+    fontSize: FontDimensionHook(16),
     fontStyle: 'normal',
     fontWeight: '500',
   },

@@ -6,6 +6,10 @@ const WidthDimensionHook = (widthValue: number) => {
 
   width = isMobileLandscape ? height : width;
 
+  if (widthValue === 0) {
+    const calculatedWidthValue = width;
+    return calculatedWidthValue;
+  }
   if (widthValue) {
     const calculatedWidthValue = width * widthValue;
     return calculatedWidthValue;

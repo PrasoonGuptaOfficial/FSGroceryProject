@@ -6,6 +6,10 @@ const HeightDimensionHook = (heightValue: number) => {
 
   height = isMobileLandscape ? width : height;
 
+  if (heightValue === 0) {
+    const calculatedHeightValue = height;
+    return calculatedHeightValue;
+  }
   if (heightValue) {
     const calculatedHeightValue = height * heightValue;
     return calculatedHeightValue;
