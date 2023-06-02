@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
+import FontDimensionHook from '../../../Hook/Dimension/FontDimensionHook';
 
 const TextContainerStyle = StyleSheet.create({
   container: {
-    fontSize: 14,
+    fontSize: FontDimensionHook(24),
     fontStyle: 'normal',
     fontWeight: '500',
   },

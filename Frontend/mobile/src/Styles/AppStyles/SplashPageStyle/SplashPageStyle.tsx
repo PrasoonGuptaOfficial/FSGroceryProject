@@ -24,6 +24,7 @@ const SplashPageStyle = ({
     textContainer: {
       ...TextContainerStyle.container,
       color: splashText,
+      fontFamily: 'Roboto-Bold',
     },
   });
 };

@@ -1,0 +1,293 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/Assets/Fonts/GreatVibesFont/GreatVibes-Regular.otf",
+      "sha1": "7a78278837e269ec5d0bf338534781b94c0bef8c"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-Black.otf",
+      "sha1": "94c9a8f970678781fb922ceefd77a1974feea96e"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-BlackItalic.otf",
+      "sha1": "a1566799716a4c14fb528a219f3c29d08a51f77e"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-Bold.otf",
+      "sha1": "a88aa713b7cdada0016869ed3548aa9c4e4f18b5"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-BoldItalic.otf",
+      "sha1": "774744bf52312b8142c1e0f4060e09056d3a5db6"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-ExtraBold.otf",
+      "sha1": "ab9c38de64ab1be8a704078f995cb2a82ec23abe"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-ExtraBoldItalic.otf",
+      "sha1": "34e4027100fdc79f198e3cf59826d6416fbe0875"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-ExtraLight.otf",
+      "sha1": "3e3eb34473ff978ae81339acd9f7b28d0369deba"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-ExtraLightItalic.otf",
+      "sha1": "688774246fad8f76a711cdc76f5b2ac954463798"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-Italic.otf",
+      "sha1": "43e14b2056deca9342912bf8d546aa3871ee1715"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-Light.otf",
+      "sha1": "ee6a7d058b354822c7b4b3b0075bfc26081d29f5"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-LightItalic.otf",
+      "sha1": "417f977540d16155558b9a22088202598b20f5da"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-Medium.otf",
+      "sha1": "595cf06c2cd83ab2e0ccd5b74e247f534d139899"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-MediumItalic.otf",
+      "sha1": "73c766e2ba350eb15c8838d2da40ae2fdb43e100"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-Regular.otf",
+      "sha1": "a3f5403e26df9e0dfcabd5c17bdf29662fbe96c2"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-SemiBold.otf",
+      "sha1": "db55f109eb4b0f28fa0a9e18347a506d3ee2240f"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-SemiBoldItalic.otf",
+      "sha1": "53df518a667a4ef31f90106bbecaa552b252a887"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-Thin.otf",
+      "sha1": "b19297a758a94393394a7955841b178d935b9c64"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/Montserrat-ThinItalic.otf",
+      "sha1": "fa83c3f736cb77cd98eb934baa05c550c1106926"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-Black.otf",
+      "sha1": "a30afb1de5b9829c30e085cc74103fd7dd27680e"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-BlackItalic.otf",
+      "sha1": "0ac8aebb963d4c500d69a3042826f656c263a90a"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-Bold.otf",
+      "sha1": "72c158fe0660d50e1ebdaefea76d36ec569c85ec"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-BoldItalic.otf",
+      "sha1": "a9a23bf6e2b6947320091856adbe7b73c062073f"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-ExtraBold.otf",
+      "sha1": "7686837b7b77ea26fa61eca78a6c84796d235ef7"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-ExtraBoldItalic.otf",
+      "sha1": "81fe68a6641ab5b74a78b24726fc979f12b57dab"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-ExtraLight.otf",
+      "sha1": "eabbb39b685d695f0b50c0b010a5fb318f119d4f"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-ExtraLightItalic.otf",
+      "sha1": "11aacd4538873b71aeeeea83e8281259a38e78a0"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-Italic.otf",
+      "sha1": "fa30d888a9f4832dc97ec9384104b3ccbf09c150"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-Light.otf",
+      "sha1": "477abdbf0be717c207b2f9b54d65c0e4674f1ea3"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-LightItalic.otf",
+      "sha1": "769088aae6602cc7a1b99b04ee57342d27b09fa4"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-Medium.otf",
+      "sha1": "2608248656adf9a268563c6ac49e63112db6f401"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-MediumItalic.otf",
+      "sha1": "cfa4363ee7cf36fdeb46196c9c0de2f416c7f5cc"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-Regular.otf",
+      "sha1": "ff8cb532a93eb0e6d4f156588a07cb840a1a2060"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-SemiBold.otf",
+      "sha1": "deda2a5432b73bf5ff8b603421ac8511b6a57a8e"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-SemiBoldItalic.otf",
+      "sha1": "75711998d7562f347b261486a528e918b614d5af"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-Thin.otf",
+      "sha1": "16be09155c032841fe46a3f1ac97671186807a11"
+    },
+    {
+      "path": "src/Assets/Fonts/MontSerratFont/MontserratAlternates-ThinItalic.otf",
+      "sha1": "b5d6766bd3ae41a70b17cf7207a2be2f27ef8bb7"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-Bold.ttf",
+      "sha1": "c1691e8168b2596af8a00162bac60dbe605e9e36"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-BoldItalic.ttf",
+      "sha1": "cea7b25e625f8f42d09c3034aad8afd826e9941a"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-ExtraBold.ttf",
+      "sha1": "97d0bd44f1731a9d97fc29e2b2208835575b60b9"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-ExtraBoldItalic.ttf",
+      "sha1": "1d865d0a3e05f13ce91e3727e0cb97fdc1c4ca42"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-Italic.ttf",
+      "sha1": "f1692eac564e95023e4da341a1b89baae7a65155"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-Light.ttf",
+      "sha1": "40442c189568184b6e6c27a25d69f14d91b65039"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-LightItalic.ttf",
+      "sha1": "73c4730894c67900e0b7bd7a491c717d4a236b30"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-Regular.ttf",
+      "sha1": "3564ed0b5363df5cf277c16e0c6bedc5a682217f"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-Semibold.ttf",
+      "sha1": "f1ee7a9c6d13ee2d642a806c09e737275e613792"
+    },
+    {
+      "path": "src/Assets/Fonts/OpenSansFont/OpenSans-SemiboldItalic.ttf",
+      "sha1": "f577ce4322c761a10d093f11f077a48602d2c076"
+    },
+    {
+      "path": "src/Assets/Fonts/QuickSandFont/Quicksand-Bold.otf",
+      "sha1": "ccfc43aa80b53cf2df22f9dca0bc5174f3ee8c27"
+    },
+    {
+      "path": "src/Assets/Fonts/QuickSandFont/Quicksand-BoldItalic.otf",
+      "sha1": "411cf61aaf7a9c638a18355adc2e6857879efce9"
+    },
+    {
+      "path": "src/Assets/Fonts/QuickSandFont/Quicksand-Italic.otf",
+      "sha1": "131ba23d6153b0d63d51de9759b8996c7c693928"
+    },
+    {
+      "path": "src/Assets/Fonts/QuickSandFont/Quicksand-Light.otf",
+      "sha1": "d953e2bcba276dfdee1fb985124cbc59f106e330"
+    },
+    {
+      "path": "src/Assets/Fonts/QuickSandFont/Quicksand-LightItalic.otf",
+      "sha1": "16b9323fddb94ba4f0d902cf54f9db8a701825fd"
+    },
+    {
+      "path": "src/Assets/Fonts/QuickSandFont/Quicksand-Regular.otf",
+      "sha1": "cd44de2b69b723902d81f2a53613b7e94adda1ec"
+    },
+    {
+      "path": "src/Assets/Fonts/QuickSandFont/Quicksand_Dash.otf",
+      "sha1": "06c02e63a27e070c7ca9c4fb34488e3d99e8dc20"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-Black.ttf",
+      "sha1": "c572416b9587c40d49ea60c7128f7f17b9317ad8"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-BlackItalic.ttf",
+      "sha1": "6c8acc36bbdf17bcd6a33756aa42e2557bb3f805"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-Bold.ttf",
+      "sha1": "0ce37ced9c5fcac9bdc452a432c1258870ba4677"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-BoldItalic.ttf",
+      "sha1": "8cd79e47ed8a9f9ea79ffa186852ad7cbad5687f"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-Italic.ttf",
+      "sha1": "0213e38dffde2a0a5672d84fb62c6aa994e38c3b"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-Light.ttf",
+      "sha1": "73a2bb2d6e591a90ffb4ed118a3989fb17b54c7b"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-LightItalic.ttf",
+      "sha1": "037ef2bf307642203858dd252fc46eb400684f02"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-Medium.ttf",
+      "sha1": "5f16f4d6dbb4a4f12d8ae96488ac209bb49762a5"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-MediumItalic.ttf",
+      "sha1": "cab617eccf6db0396675ec9c42e747a4738f059f"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-Regular.ttf",
+      "sha1": "dd1b1db13ff1f72138c134c62f38fef83749f36a"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-Thin.ttf",
+      "sha1": "9514ad7aee341594f43a33893f0b3d8a6d81f32e"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/Roboto-ThinItalic.ttf",
+      "sha1": "c9297d2166618da2b66a06bacfcbd50b68581e6f"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/RobotoCondensed-Bold.ttf",
+      "sha1": "c348d9f1b95e103ac2d14d56682867368f385b1a"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/RobotoCondensed-BoldItalic.ttf",
+      "sha1": "3bd9f2b8c65c4dd80f535b9ddd937784e0d71ce6"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/RobotoCondensed-Italic.ttf",
+      "sha1": "394439fa97f36bba80f061e32e46ead1650e798e"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/RobotoCondensed-Light.ttf",
+      "sha1": "df222c27b5e41dc89ca76a4479c9dd3ae6c1acbc"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/RobotoCondensed-LightItalic.ttf",
+      "sha1": "d974583f3217141e4fc04bf94c3c6f94d9f56f8f"
+    },
+    {
+      "path": "src/Assets/Fonts/RobotoFont/RobotoCondensed-Regular.ttf",
+      "sha1": "c722696501a8663d64208d754e4db8165d3936f6"
+    }
+  ]
+}
