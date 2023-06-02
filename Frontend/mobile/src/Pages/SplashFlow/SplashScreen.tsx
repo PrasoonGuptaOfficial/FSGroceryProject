@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import {
   PNGImageComp,
   ViewComp,
@@ -8,7 +8,7 @@ import ReusableCompString from '../../Constants/Strings/ReusableComp/ReusableCom
 import PNGImages from '../../Constants/Images/PNG/PNGImages';
 
 const SplashScreen = (): React.JSX.Element => {
-  const {container, imageContainer} = useMemo(() => SplashPageStyle(), []);
+  const {container, imageContainer} = SplashPageStyle();
   const {SplashGrocery} = PNGImages;
   return (
     <ViewComp viewType={ReusableCompString.SafeArea} viewStyle={container}>
