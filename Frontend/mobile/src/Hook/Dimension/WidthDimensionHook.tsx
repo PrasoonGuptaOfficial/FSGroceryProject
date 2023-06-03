@@ -9,8 +9,7 @@ const WidthDimensionHook = (widthValue: number) => {
   if (widthValue === 0) {
     const calculatedWidthValue = width;
     return calculatedWidthValue;
-  }
-  if (widthValue) {
+  } else if (widthValue) {
     const calculatedWidthValue = width * widthValue;
     return calculatedWidthValue;
   }
