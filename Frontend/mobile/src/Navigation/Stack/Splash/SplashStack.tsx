@@ -5,7 +5,7 @@ import {SplashPageOption} from './SplashOption';
 
 const MyStack = createStackNavigator();
 
-function SplashStack(): JSX.Element {
+function SplashStack(): React.JSX.Element {
   return (
     <MyStack.Navigator>
       <MyStack.Screen
