@@ -1,6 +1,8 @@
-import React, {useMemo} from 'react';
+import React, {useContext, useState} from 'react';
 import {
+  FloatingActionButtonComp,
   ImageBackgroundComp,
+  ModalComp,
   PressableComp,
   TextComp,
   ViewComp,
@@ -8,10 +10,18 @@ import {
 import ReusableCompString from '../../Constants/Strings/ReusableComp/ReusableCompString';
 import PNGImages from '../../Constants/Images/PNG/PNGImages';
 import {OnboardingPageStyle} from '../../Styles/Common/Common';
-import OnboardingPageString from '../../Constants/Strings/App/OnboardingPageString';
 import {ReusableCompColors} from '../../Constants/Colors/ReusableComp/ReusableCompColor';
+import LanguageContext from '../../Context/Language/LanguageContext';
+import {AppSymbol} from '../../Constants/Symbols/App/AppSymbol';
+import FloatingActionButtonModal from '../../Components/App/FloatingActonButtonComp/FloatingActionButtonModal';
+import LanguageHook from '../../Hook/Language/LanguageHook';
 
 const OnboardingScreen = (): React.JSX.Element => {
+  const [isFloatingButtonModalVisible, setIsFloatingButtonModalVisible] =
+    useState(false);
+  const Language = useContext(LanguageContext);
+  const {onLanguageChangeHandler, defaultLanguage} = Language;
+  const [languageSelected, setLanguageSelected] = useState(defaultLanguage);
   const {OnboardingGrocery} = PNGImages;
   const {splashText, buttonThemeColor} = ReusableCompColors.lightTheme;
   const {
@@ -20,27 +30,30 @@ const OnboardingScreen = (): React.JSX.Element => {
     imageOverlayViewContainer,
     welcomingTextContainer,
     sloganTextContainer,
-    pressableTextContainer,
     pressableContainer,
-  } = useMemo(
-    () =>
-      OnboardingPageStyle({
-        splashText,
-        buttonThemeColor,
-      }),
-    [splashText, buttonThemeColor],
-  );
+    pressableTextContainer,
+  } = OnboardingPageStyle({splashText, buttonThemeColor});
+  const {SafeArea, Onboarding} = ReusableCompString;
   const {WelcomingStore, GrocerySlogan, GetStartedButton} =
-    OnboardingPageString;
+    LanguageHook(Onboarding);
+  const {Plus} = AppSymbol;
   const onPressChangeHandler = () => {};
+  const onFloatingActionButtonPressedHandler = () => {
+    setIsFloatingButtonModalVisible(true);
+  };
+  const onFloatingActionButtonCloseHandler = () => {
+    setIsFloatingButtonModalVisible(false);
+  };
+  const onLanguageSelectedHandler = (languageChosen: string) => {
+    setLanguageSelected(languageChosen);
+    onLanguageChangeHandler(languageChosen);
+  };
   return (
-    <ViewComp viewType={ReusableCompString.SafeArea} viewStyle={container}>
+    <ViewComp viewType={SafeArea} viewStyle={container}>
       <ImageBackgroundComp
         imageBackgroundSource={OnboardingGrocery}
         imageBackgroundStyle={imageContainer}>
-        <ViewComp
-          viewType={ReusableCompString.SafeArea}
-          viewStyle={imageOverlayViewContainer}>
+        <ViewComp viewType={SafeArea} viewStyle={imageOverlayViewContainer}>
           <TextComp
             textTitle={WelcomingStore}
             textStyle={welcomingTextContainer}
@@ -53,6 +66,19 @@ const OnboardingScreen = (): React.JSX.Element => {
             pressableOnPress={onPressChangeHandler}
           />
         </ViewComp>
+        <FloatingActionButtonComp
+          onActionButtonPress={onFloatingActionButtonPressedHandler}
+          onActionButtonText={Plus}
+        />
+        <ModalComp
+          modalVisibleFlag={isFloatingButtonModalVisible}
+          modalVisibleClose={onFloatingActionButtonCloseHandler}>
+          <FloatingActionButtonModal
+            floatingButtonCloseHandler={onFloatingActionButtonCloseHandler}
+            floatingActionButtonLanguageSelected={onLanguageSelectedHandler}
+            floatingActionLanguage={languageSelected}
+          />
+        </ModalComp>
       </ImageBackgroundComp>
     </ViewComp>
   );

@@ -6,6 +6,7 @@ import {
   TextContainerStyle,
 } from '../../Common/Common';
 import FontDimensionHook from '../../../Hook/Dimension/FontDimensionHook';
+import HeightDimensionHook from '../../../Hook/Dimension/HeightDimensionHook';
 
 const OnboardingPageStyle = ({
   splashText,
@@ -46,7 +47,7 @@ const OnboardingPageStyle = ({
       ...PressableContainerStyle.container,
       backgroundColor: buttonThemeColor,
       borderColor: buttonThemeColor,
-      top: 200,
+      top: HeightDimensionHook(0.25),
     },
     pressableTextContainer: {
       ...TextContainerStyle.container,
