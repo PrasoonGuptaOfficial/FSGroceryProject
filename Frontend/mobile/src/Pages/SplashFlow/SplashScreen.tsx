@@ -9,12 +9,12 @@ import PNGImages from '../../Constants/Images/PNG/PNGImages';
 import {useNavigation} from '@react-navigation/native';
 
 const SplashScreen = (): React.JSX.Element => {
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
   const {container, imageContainer} = SplashPageStyle();
   const {SplashGrocery} = PNGImages;
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('OnboardingStack');
+      navigation.navigate('OnboardingStack', {screen: 'OnboardingPage'});
     }, 1000);
   }, [navigation]);
   return (

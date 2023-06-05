@@ -5,6 +5,7 @@ const ReusableCompString = {
   FlatListComp: 'FlatListComp',
   Onboarding: 'Onboarding',
   Floating: 'Floating',
+  LoginMainPageSc: 'LoginMainPage',
 };
 
 export default ReusableCompString;

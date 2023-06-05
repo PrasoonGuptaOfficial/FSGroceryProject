@@ -9,6 +9,7 @@ import ModalContainerStyle from '../CommonStyles/ModalContainerStyle/ModalContai
 import OnboardingPageStyle from '../AppStyles/OnboardingPageStyle/OnboardingPageStyle';
 import FloatingActionButtonCompStyle from '../AppStyles/FloatingActionButtonCompStyle/FloatingActionButtonCompStyle';
 import FloatingActionModalButtonStyle from '../AppStyles/FloatingActionButtonCompStyle/FloatingActionModalButtonStyle';
+import LoginMainPageStyle from '../AppStyles/LoginMainPageStyle/LoginMainPageStyle';
 
 export {
   SplashPageStyle,
@@ -21,4 +22,5 @@ export {
   OnboardingPageStyle,
   FloatingActionButtonCompStyle,
   FloatingActionModalButtonStyle,
+  LoginMainPageStyle,
 };

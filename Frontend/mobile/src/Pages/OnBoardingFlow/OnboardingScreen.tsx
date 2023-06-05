@@ -15,8 +15,10 @@ import LanguageContext from '../../Context/Language/LanguageContext';
 import {AppSymbol} from '../../Constants/Symbols/App/AppSymbol';
 import FloatingActionButtonModal from '../../Components/App/FloatingActonButtonComp/FloatingActionButtonModal';
 import LanguageHook from '../../Hook/Language/LanguageHook';
+import {useNavigation} from '@react-navigation/native';
 
 const OnboardingScreen = (): React.JSX.Element => {
+  const navigation: any = useNavigation();
   const [isFloatingButtonModalVisible, setIsFloatingButtonModalVisible] =
     useState(false);
   const Language = useContext(LanguageContext);
@@ -37,7 +39,9 @@ const OnboardingScreen = (): React.JSX.Element => {
   const {WelcomingStore, GrocerySlogan, GetStartedButton} =
     LanguageHook(Onboarding);
   const {Plus} = AppSymbol;
-  const onPressChangeHandler = () => {};
+  const onPressChangeHandler = () => {
+    navigation.navigate('LoginStack', {screen: 'LoginMainPage'});
+  };
   const onFloatingActionButtonPressedHandler = () => {
     setIsFloatingButtonModalVisible(true);
   };
