@@ -6,6 +6,7 @@ const ReusableCompString = {
   Onboarding: 'Onboarding',
   Floating: 'Floating',
   LoginMainPageSc: 'LoginMainPage',
+  Alert: 'Alert',
 };
 
 export default ReusableCompString;

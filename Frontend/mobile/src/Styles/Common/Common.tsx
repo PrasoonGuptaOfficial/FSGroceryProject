@@ -10,6 +10,7 @@ import OnboardingPageStyle from '../AppStyles/OnboardingPageStyle/OnboardingPage
 import FloatingActionButtonCompStyle from '../AppStyles/FloatingActionButtonCompStyle/FloatingActionButtonCompStyle';
 import FloatingActionModalButtonStyle from '../AppStyles/FloatingActionButtonCompStyle/FloatingActionModalButtonStyle';
 import LoginMainPageStyle from '../AppStyles/LoginMainPageStyle/LoginMainPageStyle';
+import AlertCompStyle from '../AppStyles/AlertCompStyle/AlertCompStyle';
 
 export {
   SplashPageStyle,
@@ -23,4 +24,5 @@ export {
   FloatingActionButtonCompStyle,
   FloatingActionModalButtonStyle,
   LoginMainPageStyle,
+  AlertCompStyle,
 };

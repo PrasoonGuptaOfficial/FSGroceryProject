@@ -15,9 +15,10 @@ const FloatingActionButtonComp = (props: any): React.JSX.Element => {
     splashText,
     isAndroid,
   });
+  const {TouchableComp} = ReusableCompString;
   return (
     <ViewComp
-      viewType={ReusableCompString.TouchableComp}
+      viewType={TouchableComp}
       viewStyle={container}
       viewOnPress={onActionButtonPress}>
       <TextComp

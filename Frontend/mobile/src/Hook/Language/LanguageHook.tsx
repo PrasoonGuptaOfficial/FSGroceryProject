@@ -4,11 +4,12 @@ import OnboardingPageString from '../../Constants/Strings/App/OnboardingPageStri
 import FloatingActionModalString from '../../Constants/Strings/App/FloatingActionModalString';
 import ReusableCompString from '../../Constants/Strings/ReusableComp/ReusableCompString';
 import LoginMainPageString from '../../Constants/Strings/App/LoginMainPageString';
+import AlertCompString from '../../Constants/Strings/App/AlertCompString';
 
 const LanguageHook = (screen: string): any => {
   const Language = useContext(LanguageContext);
   const {defaultLanguage} = Language;
-  const {Onboarding, Floating, LoginMainPageSc} = ReusableCompString;
+  const {Onboarding, Floating, LoginMainPageSc, Alert} = ReusableCompString;
   switch (screen) {
     case Onboarding:
       return OnboardingPageString[
@@ -22,6 +23,8 @@ const LanguageHook = (screen: string): any => {
       return LoginMainPageString[
         defaultLanguage as keyof typeof LoginMainPageString
       ];
+    case Alert:
+      return AlertCompString[defaultLanguage as keyof typeof AlertCompString];
     default:
       return '';
   }
