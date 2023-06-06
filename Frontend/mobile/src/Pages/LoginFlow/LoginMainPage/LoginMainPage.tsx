@@ -12,6 +12,7 @@ import {ReusableCompColors} from '../../../Constants/Colors/ReusableComp/Reusabl
 import SVGImages from '../../../Constants/Images/SVG/SVGImages';
 import {AppSymbol} from '../../../Constants/Symbols/App/AppSymbol';
 import LanguageHook from '../../../Hook/Language/LanguageHook';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 const LoginMainPage = (): React.JSX.Element => {
   const {SafeArea, LoginMainPageSc} = ReusableCompString;
@@ -61,7 +62,29 @@ const LoginMainPage = (): React.JSX.Element => {
   });
   const onPressPhoneHandler = () => {};
   const onPressEmailHandler = () => {};
-  const onPressGoogleHandler = () => {};
+  const onPressGoogleHandler = () => {
+    GoogleSignin.configure({
+      scopes: ['https://www.googleapis.com/auth/userinfo.profile'],
+      webClientId:
+        '528260113137-uod9foj8kmjk78clniqpe06s3ed40did.apps.googleusercontent.com',
+      iosClientId:
+        '528260113137-b13hq8d3e6u4gvd5lkiqasvp8r3m34gf.apps.googleusercontent.com',
+      offlineAccess: true,
+    });
+    GoogleSignin.hasPlayServices()
+      .then(hasPlayServices => {
+        if (hasPlayServices) {
+          GoogleSignin.signIn()
+            .then(userInfo => {
+              console.log('SUCCESS SIGN IN: ', JSON.stringify(userInfo));
+            })
+            .catch(error =>
+              console.log('ERROR SIGN IN: ', JSON.stringify(error)),
+            );
+        }
+      })
+      .catch(error => console.log('ERROR IS: ', JSON.stringify(error)));
+  };
   const onPressAppleHandler = () => {};
   const onPressSignUpHandler = () => {};
   return (
