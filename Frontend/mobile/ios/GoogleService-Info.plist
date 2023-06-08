@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>528260113137-b13hq8d3e6u4gvd5lkiqasvp8r3m34gf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.528260113137-b13hq8d3e6u4gvd5lkiqasvp8r3m34gf</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>528260113137-7m3uq39ma275dm95n31cpu9232c53rpd.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBcNJ1xHGn_wgIYcaVyAvwdkXAGVyy3uio</string>
+	<key>GCM_SENDER_ID</key>
+	<string>528260113137</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.mobile</string>
+	<key>PROJECT_ID</key>
+	<string>tidal-fiber-388921</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tidal-fiber-388921.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:528260113137:ios:f443be0b204367ad76bf50</string>
+</dict>
+</plist>

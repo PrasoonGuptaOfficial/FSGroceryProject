@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   PNGImageComp,
   PressableComp,
@@ -13,8 +13,12 @@ import SVGImages from '../../../Constants/Images/SVG/SVGImages';
 import {AppSymbol} from '../../../Constants/Symbols/App/AppSymbol';
 import LanguageHook from '../../../Hook/Language/LanguageHook';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+import {TextInput} from 'react-native';
 
 const LoginMainPage = (): React.JSX.Element => {
+  const [confirmData, setConfirmData] = useState({});
+  const [input, onSetInput] = useState('');
   const {SafeArea, LoginMainPageSc} = ReusableCompString;
   const {MainSignIn} = PNGImages;
   const {
@@ -60,7 +64,18 @@ const LoginMainPage = (): React.JSX.Element => {
     phoneBackgroundTheme,
     buttonThemeColor,
   });
-  const onPressPhoneHandler = () => {};
+  const onPressPhoneHandler = async () => {
+    try {
+      const response = await auth().signInWithPhoneNumber(
+        '+918708248058',
+        true,
+      );
+      console.log('SUCCESS SIGN IN: ', JSON.stringify(response));
+      setConfirmData(response);
+    } catch (error) {
+      console.log('ERROR IS: ', error);
+    }
+  };
   const onPressEmailHandler = () => {};
   const onPressGoogleHandler = () => {
     GoogleSignin.configure({
@@ -85,7 +100,14 @@ const LoginMainPage = (): React.JSX.Element => {
       })
       .catch(error => console.log('ERROR IS: ', JSON.stringify(error)));
   };
-  const onPressAppleHandler = () => {};
+  const onPressAppleHandler = async () => {
+    try {
+      const response = await confirmData.confirm(input);
+      console.log('SUCCESS VERIFIED: ', JSON.stringify(response));
+    } catch (error) {
+      console.log('ERROR IS: ', JSON.stringify(error));
+    }
+  };
   const onPressSignUpHandler = () => {};
   return (
     <ViewComp viewType={SafeArea} viewStyle={container}>
@@ -122,6 +144,11 @@ const LoginMainPage = (): React.JSX.Element => {
         pressableTextStyle={appleTextContainer}
         pressableImage={AppleLogo}
         pressableImageWidth={googleLogoContainer}
+      />
+      <TextInput
+        value={input}
+        onChangeText={onSetInput}
+        style={{borderWidth: 1, borderColor: 'black', width: 200}}
       />
       <ViewComp viewType={SafeArea} viewStyle={notAccountContainer}>
         <TextComp textTitle={NotAccount} textStyle={notAccountTextContainer} />
