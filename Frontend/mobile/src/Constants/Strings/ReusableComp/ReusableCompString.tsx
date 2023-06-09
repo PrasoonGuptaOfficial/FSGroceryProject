@@ -7,6 +7,7 @@ const ReusableCompString = {
   Floating: 'Floating',
   LoginMainPageSc: 'LoginMainPage',
   Alert: 'Alert',
+  PhoneAuthenticate: 'PhoneAuthenticate',
 };
 
 export default ReusableCompString;

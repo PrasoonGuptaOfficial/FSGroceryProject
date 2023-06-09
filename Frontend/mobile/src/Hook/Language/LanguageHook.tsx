@@ -5,11 +5,13 @@ import FloatingActionModalString from '../../Constants/Strings/App/FloatingActio
 import ReusableCompString from '../../Constants/Strings/ReusableComp/ReusableCompString';
 import LoginMainPageString from '../../Constants/Strings/App/LoginMainPageString';
 import AlertCompString from '../../Constants/Strings/App/AlertCompString';
+import PhoneAuthenticationPageString from '../../Constants/Strings/App/PhoneAuthenticationPageString';
 
 const LanguageHook = (screen: string): any => {
   const Language = useContext(LanguageContext);
   const {defaultLanguage} = Language;
-  const {Onboarding, Floating, LoginMainPageSc, Alert} = ReusableCompString;
+  const {Onboarding, Floating, LoginMainPageSc, Alert, PhoneAuthenticate} =
+    ReusableCompString;
   switch (screen) {
     case Onboarding:
       return OnboardingPageString[
@@ -25,6 +27,10 @@ const LanguageHook = (screen: string): any => {
       ];
     case Alert:
       return AlertCompString[defaultLanguage as keyof typeof AlertCompString];
+    case PhoneAuthenticate:
+      return PhoneAuthenticationPageString[
+        defaultLanguage as keyof typeof PhoneAuthenticationPageString
+      ];
     default:
       return '';
   }

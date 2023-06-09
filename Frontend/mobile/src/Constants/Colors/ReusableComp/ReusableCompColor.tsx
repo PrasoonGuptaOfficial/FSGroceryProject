@@ -7,6 +7,8 @@ export const ReusableCompColors = {
     googleBackgroundTheme: '#F97A33',
     mailBackgroundTheme: '#FF9900',
     phoneBackgroundTheme: '#4ED192',
+    MobileNumberText: '#181725',
+    placeHolderTheme: '#7C7C7C',
   },
   darkTheme: {
     baseColor: '#1D4F8C',
@@ -16,5 +18,7 @@ export const ReusableCompColors = {
     googleBackgroundTheme: '#F97A33',
     mailBackgroundTheme: '#FF9900',
     phoneBackgroundTheme: '#4ED192',
+    MobileNumberText: '#181725',
+    placeHolderTheme: '#7C7C7C',
   },
 };

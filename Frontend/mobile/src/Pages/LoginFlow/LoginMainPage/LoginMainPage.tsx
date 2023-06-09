@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   PNGImageComp,
   PressableComp,
@@ -12,13 +12,12 @@ import {ReusableCompColors} from '../../../Constants/Colors/ReusableComp/Reusabl
 import SVGImages from '../../../Constants/Images/SVG/SVGImages';
 import {AppSymbol} from '../../../Constants/Symbols/App/AppSymbol';
 import LanguageHook from '../../../Hook/Language/LanguageHook';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import auth from '@react-native-firebase/auth';
-import {TextInput} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+// import {GoogleSignin} from '@react-native-google-signin/google-signin';
+// import auth from '@react-native-firebase/auth';
 
 const LoginMainPage = (): React.JSX.Element => {
-  const [confirmData, setConfirmData] = useState({});
-  const [input, onSetInput] = useState('');
+  const navigation: any = useNavigation();
   const {SafeArea, LoginMainPageSc} = ReusableCompString;
   const {MainSignIn} = PNGImages;
   const {
@@ -65,48 +64,49 @@ const LoginMainPage = (): React.JSX.Element => {
     buttonThemeColor,
   });
   const onPressPhoneHandler = async () => {
-    try {
-      const response = await auth().signInWithPhoneNumber(
-        '+918708248058',
-        true,
-      );
-      console.log('SUCCESS SIGN IN: ', JSON.stringify(response));
-      setConfirmData(response);
-    } catch (error) {
-      console.log('ERROR IS: ', error);
-    }
+    navigation.navigate('LoginPhoneAuthentication');
+    // try {
+    //   const response = await auth().signInWithPhoneNumber(
+    //     '+918708248058',
+    //     true,
+    //   );
+    //   console.log('SUCCESS SIGN IN: ', JSON.stringify(response));
+    //   setConfirmData(response);
+    // } catch (error) {
+    //   console.log('ERROR IS: ', error);
+    // }
   };
   const onPressEmailHandler = () => {};
   const onPressGoogleHandler = () => {
-    GoogleSignin.configure({
-      scopes: ['https://www.googleapis.com/auth/userinfo.profile'],
-      webClientId:
-        '528260113137-uod9foj8kmjk78clniqpe06s3ed40did.apps.googleusercontent.com',
-      iosClientId:
-        '528260113137-b13hq8d3e6u4gvd5lkiqasvp8r3m34gf.apps.googleusercontent.com',
-      offlineAccess: true,
-    });
-    GoogleSignin.hasPlayServices()
-      .then(hasPlayServices => {
-        if (hasPlayServices) {
-          GoogleSignin.signIn()
-            .then(userInfo => {
-              console.log('SUCCESS SIGN IN: ', JSON.stringify(userInfo));
-            })
-            .catch(error =>
-              console.log('ERROR SIGN IN: ', JSON.stringify(error)),
-            );
-        }
-      })
-      .catch(error => console.log('ERROR IS: ', JSON.stringify(error)));
+    // GoogleSignin.configure({
+    //   scopes: ['https://www.googleapis.com/auth/userinfo.profile'],
+    //   webClientId:
+    //     '528260113137-uod9foj8kmjk78clniqpe06s3ed40did.apps.googleusercontent.com',
+    //   iosClientId:
+    //     '528260113137-b13hq8d3e6u4gvd5lkiqasvp8r3m34gf.apps.googleusercontent.com',
+    //   offlineAccess: true,
+    // });
+    // GoogleSignin.hasPlayServices()
+    //   .then(hasPlayServices => {
+    //     if (hasPlayServices) {
+    //       GoogleSignin.signIn()
+    //         .then(userInfo => {
+    //           console.log('SUCCESS SIGN IN: ', JSON.stringify(userInfo));
+    //         })
+    //         .catch(error =>
+    //           console.log('ERROR SIGN IN: ', JSON.stringify(error)),
+    //         );
+    //     }
+    //   })
+    //   .catch(error => console.log('ERROR IS: ', JSON.stringify(error)));
   };
   const onPressAppleHandler = async () => {
-    try {
-      const response = await confirmData.confirm(input);
-      console.log('SUCCESS VERIFIED: ', JSON.stringify(response));
-    } catch (error) {
-      console.log('ERROR IS: ', JSON.stringify(error));
-    }
+    // try {
+    //   const response = await confirmData.confirm(input);
+    //   console.log('SUCCESS VERIFIED: ', JSON.stringify(response));
+    // } catch (error) {
+    //   console.log('ERROR IS: ', JSON.stringify(error));
+    // }
   };
   const onPressSignUpHandler = () => {};
   return (
@@ -144,11 +144,6 @@ const LoginMainPage = (): React.JSX.Element => {
         pressableTextStyle={appleTextContainer}
         pressableImage={AppleLogo}
         pressableImageWidth={googleLogoContainer}
-      />
-      <TextInput
-        value={input}
-        onChangeText={onSetInput}
-        style={{borderWidth: 1, borderColor: 'black', width: 200}}
       />
       <ViewComp viewType={SafeArea} viewStyle={notAccountContainer}>
         <TextComp textTitle={NotAccount} textStyle={notAccountTextContainer} />
