@@ -9,7 +9,7 @@ const BackContainerStyle = StyleSheet.create({
     ...TextContainerStyle.container,
     fontFamily: 'Roboto-Regular',
     textAlign: 'left',
-    fontSize: FontDimensionHook(20),
+    fontSize: FontDimensionHook(24),
     marginLeft: WidthDimensionHook(0.05),
     marginTop: HeightDimensionHook(0.02),
   },

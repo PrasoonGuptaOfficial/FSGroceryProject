@@ -14,7 +14,6 @@ import {AppSymbol} from '../../../Constants/Symbols/App/AppSymbol';
 import LanguageHook from '../../../Hook/Language/LanguageHook';
 import {useNavigation} from '@react-navigation/native';
 // import {GoogleSignin} from '@react-native-google-signin/google-signin';
-// import auth from '@react-native-firebase/auth';
 
 const LoginMainPage = (): React.JSX.Element => {
   const navigation: any = useNavigation();
@@ -65,16 +64,6 @@ const LoginMainPage = (): React.JSX.Element => {
   });
   const onPressPhoneHandler = async () => {
     navigation.navigate('LoginPhoneAuthentication');
-    // try {
-    //   const response = await auth().signInWithPhoneNumber(
-    //     '+918708248058',
-    //     true,
-    //   );
-    //   console.log('SUCCESS SIGN IN: ', JSON.stringify(response));
-    //   setConfirmData(response);
-    // } catch (error) {
-    //   console.log('ERROR IS: ', error);
-    // }
   };
   const onPressEmailHandler = () => {};
   const onPressGoogleHandler = () => {

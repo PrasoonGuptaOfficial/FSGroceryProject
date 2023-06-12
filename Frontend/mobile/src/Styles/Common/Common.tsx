@@ -6,6 +6,8 @@ import ImageContainerStyle from '../CommonStyles/ImageContainerStyle/ImageContai
 import PressableContainerStyle from '../CommonStyles/PressableContainerStyle/PressableContainerStyle';
 import ModalContainerStyle from '../CommonStyles/ModalContainerStyle/ModalContainerStyle';
 import BackContainerStyle from '../CommonStyles/BackContainerStyle/BackContainerStyle';
+import TextInputContainerStyle from '../CommonStyles/TextInputContainerStyle/TextInputContainerStyle';
+import ActivityIndicatorContainerStyle from '../CommonStyles/ActivityIndicatorContainerStyle/ActivityIndicatorContainerStyle';
 
 import OnboardingPageStyle from '../AppStyles/OnboardingPageStyle/OnboardingPageStyle';
 import FloatingActionButtonCompStyle from '../AppStyles/FloatingActionButtonCompStyle/FloatingActionButtonCompStyle';
@@ -13,6 +15,9 @@ import FloatingActionModalButtonStyle from '../AppStyles/FloatingActionButtonCom
 import LoginMainPageStyle from '../AppStyles/LoginMainPageStyle/LoginMainPageStyle';
 import AlertCompStyle from '../AppStyles/AlertCompStyle/AlertCompStyle';
 import PhoneAuthenticationPageStyle from '../AppStyles/PhoneAuthenticationPageStyle/PhoneAuthenticationPageStyle';
+import PhoneAuthenticationModalCompStyle from '../AppStyles/PhoneAuthenticationModalCompStyle/PhoneAuthenticationModalCompStyle';
+import PhoneAuthenticationButtonCompStyle from '../AppStyles/PhoneAuthenticationModalCompStyle/PhoneAuthenticationButtonCompStyle';
+import PhoneAuthenticationOtpVerifyModalStyles from '../AppStyles/PhoneAuthenticationModalCompStyle/PhoneAuthenticationOtpVerifyModalStyles';
 
 export {
   SplashPageStyle,
@@ -23,10 +28,15 @@ export {
   PressableContainerStyle,
   ModalContainerStyle,
   BackContainerStyle,
+  TextInputContainerStyle,
+  ActivityIndicatorContainerStyle,
   OnboardingPageStyle,
   FloatingActionButtonCompStyle,
   FloatingActionModalButtonStyle,
   LoginMainPageStyle,
   AlertCompStyle,
   PhoneAuthenticationPageStyle,
+  PhoneAuthenticationModalCompStyle,
+  PhoneAuthenticationButtonCompStyle,
+  PhoneAuthenticationOtpVerifyModalStyles,
 };

@@ -8,7 +8,8 @@ export const ReusableCompColors = {
     mailBackgroundTheme: '#FF9900',
     phoneBackgroundTheme: '#4ED192',
     MobileNumberText: '#181725',
-    placeHolderTheme: '#7C7C7C',
+    placeHolderTheme: '#D6D6D6',
+    errorThemeColor: '#D83939',
   },
   darkTheme: {
     baseColor: '#1D4F8C',
@@ -19,6 +20,7 @@ export const ReusableCompColors = {
     mailBackgroundTheme: '#FF9900',
     phoneBackgroundTheme: '#4ED192',
     MobileNumberText: '#181725',
-    placeHolderTheme: '#7C7C7C',
+    placeHolderTheme: '#D6D6D6',
+    errorThemeColor: '#D83939',
   },
 };

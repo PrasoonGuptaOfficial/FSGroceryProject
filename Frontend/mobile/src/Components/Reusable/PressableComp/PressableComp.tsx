@@ -2,6 +2,7 @@ import React from 'react';
 import {Pressable} from 'react-native';
 import TextComp from '../TextComp/TextComp';
 import SVGImageComp from '../SVGImageComp/SVGImageComp';
+import PNGImageComp from '../PNGImageComp/PNGImageComp';
 
 const PressableComp = (props: any): React.JSX.Element => {
   const {
@@ -13,6 +14,8 @@ const PressableComp = (props: any): React.JSX.Element => {
     pressableSubTextStyle,
     pressableImage,
     pressableImageWidth,
+    pressableImagePng,
+    pressableImagePngStyle,
   } = props;
   return (
     <Pressable style={pressableStyle} onPress={pressableOnPress}>
@@ -20,6 +23,12 @@ const PressableComp = (props: any): React.JSX.Element => {
         <TextComp
           textTitle={pressableTextSubTitle}
           textStyle={pressableSubTextStyle}
+        />
+      )}
+      {pressableImagePng && (
+        <PNGImageComp
+          PngImage={pressableImagePng}
+          PngImageStyle={pressableImagePngStyle}
         />
       )}
       {pressableImage && pressableImageWidth && (

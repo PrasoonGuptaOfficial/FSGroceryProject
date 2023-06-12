@@ -1,6 +1,13 @@
 import React from 'react';
-import {FlatList, SafeAreaView, TouchableOpacity, View} from 'react-native';
+import {
+  FlatList,
+  KeyboardAvoidingView,
+  SafeAreaView,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import ReusableCompString from '../../../Constants/Strings/ReusableComp/ReusableCompString';
+import PlatformHook from '../../../Hook/Platform/PlatformHook';
 
 const ViewComp = (props: any): React.JSX.Element => {
   const {
@@ -11,6 +18,7 @@ const ViewComp = (props: any): React.JSX.Element => {
     flatListData,
     flatListRenderItem,
   } = props;
+  const {isIOS} = PlatformHook();
   switch (viewType) {
     case ReusableCompString.Simple:
       return <View style={viewStyle}>{children}</View>;
@@ -30,6 +38,14 @@ const ViewComp = (props: any): React.JSX.Element => {
           renderItem={flatListRenderItem}
           keyExtractor={item => item.id.toString()}
         />
+      );
+    case ReusableCompString.KeyboardAvoiding:
+      return (
+        <KeyboardAvoidingView
+          behavior={isIOS ? 'padding' : 'height'}
+          style={viewStyle}>
+          {children}
+        </KeyboardAvoidingView>
       );
     default:
       return <View style={viewStyle}>{children}</View>;

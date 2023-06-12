@@ -1,6 +1,7 @@
 import React from 'react';
 import ThemeProvider from '../Theme/ThemeProvider';
 import LanguageProvider from '../Language/LanguageProvider';
+import CountryProvider from '../Country/CountryProvider';
 
 const CommonContext = ({
   children,
@@ -9,7 +10,9 @@ const CommonContext = ({
 }): React.JSX.Element => {
   return (
     <ThemeProvider>
-      <LanguageProvider>{children}</LanguageProvider>
+      <LanguageProvider>
+        <CountryProvider>{children}</CountryProvider>
+      </LanguageProvider>
     </ThemeProvider>
   );
 };

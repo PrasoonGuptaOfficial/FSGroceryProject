@@ -1,19 +1,20 @@
 import React from 'react';
 import {TextComp, ViewComp} from '../../Common/commonComps.index';
 import ReusableCompString from '../../../Constants/Strings/ReusableComp/ReusableCompString';
-import {FloatingActionButtonCompStyle} from '../../../Styles/Common/Common';
+import {PhoneAuthenticationButtonCompStyle} from '../../../Styles/Common/Common';
 import {ReusableCompColors} from '../../../Constants/Colors/ReusableComp/ReusableCompColor';
 import PlatformHook from '../../../Hook/Platform/PlatformHook';
 
-const FloatingActionButtonComp = (props: any): React.JSX.Element => {
+const PhoneAuthenticationButtonComp = (props: any): React.JSX.Element => {
   const {onActionButtonPress, onActionButtonText} = props;
   const {baseColor, splashText} = ReusableCompColors.lightTheme;
   const {isAndroid} = PlatformHook();
-  const {container, textActionButtonContainer} = FloatingActionButtonCompStyle({
-    baseColor,
-    splashText,
-    isAndroid,
-  });
+  const {container, textActionButtonContainer} =
+    PhoneAuthenticationButtonCompStyle({
+      baseColor,
+      splashText,
+      isAndroid,
+    });
   const {TouchableComp} = ReusableCompString;
   return (
     <ViewComp
@@ -28,4 +29,4 @@ const FloatingActionButtonComp = (props: any): React.JSX.Element => {
   );
 };
 
-export default FloatingActionButtonComp;
+export default PhoneAuthenticationButtonComp;

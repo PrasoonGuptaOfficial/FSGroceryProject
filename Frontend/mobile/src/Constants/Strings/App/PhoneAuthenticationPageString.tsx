@@ -24,8 +24,15 @@ const PhoneAuthenticationPageString = {
     Cancel: 'रद्द करो',
   },
   English: {
-    EnterMobileNumber: 'Enter your mobile Number',
-    MobileNumber: 'Mobile Number',
+    EnterMobileNumber: 'Enter your Mobile Number',
+    SelectCountry: 'Select Country',
+    phonePlaceholder: '0000000000',
+    errorPhoneNumber: 'Min Length 4, Max Length 10',
+    errorPhoneNumberResponse: 'Invalid Phone Number',
+    enterOtp: 'Enter OTP',
+    otpPlaceholder: '000000',
+    Continue: 'Continue',
+    ErrorOtpVerifiedText: 'Invalid Otp',
   },
   Gujrati: {
     DoContinue: 'શું તમે ચાલુ રાખવા માંગો છો',
