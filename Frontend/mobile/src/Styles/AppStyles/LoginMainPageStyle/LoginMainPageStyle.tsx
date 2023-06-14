@@ -18,6 +18,7 @@ const LoginMainPageStyle = ({
   mailBackgroundTheme,
   phoneBackgroundTheme,
   buttonThemeColor,
+  errorThemeColor,
 }: {
   backgroundTheme: string;
   splashText: string;
@@ -26,6 +27,7 @@ const LoginMainPageStyle = ({
   mailBackgroundTheme: string;
   phoneBackgroundTheme: string;
   buttonThemeColor: string;
+  errorThemeColor: string;
 }) => {
   return StyleSheet.create({
     container: {
@@ -107,6 +109,11 @@ const LoginMainPageStyle = ({
       fontSize: FontDimensionHook(14),
       color: buttonThemeColor,
       fontFamily: 'Roboto-Regular',
+    },
+    errorTextStyle: {
+      ...TextContainerStyle.container,
+      color: errorThemeColor,
+      fontSize: FontDimensionHook(13),
     },
   });
 };

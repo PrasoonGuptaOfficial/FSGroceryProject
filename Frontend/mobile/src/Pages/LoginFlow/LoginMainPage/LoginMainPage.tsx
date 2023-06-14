@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
+  ActivityIndicatorComp,
+  ErrorComp,
   PNGImageComp,
   PressableComp,
   TextComp,
@@ -13,10 +15,21 @@ import SVGImages from '../../../Constants/Images/SVG/SVGImages';
 import {AppSymbol} from '../../../Constants/Symbols/App/AppSymbol';
 import LanguageHook from '../../../Hook/Language/LanguageHook';
 import {useNavigation} from '@react-navigation/native';
-// import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import {GetGoogleSignInVerified} from '../../../Helper/GetGoogleSignInVerified';
 
 const LoginMainPage = (): React.JSX.Element => {
   const navigation: any = useNavigation();
+  const [isGoogleActivityIndicatorVisible, setIsActivityIndicatorVisible] =
+    useState(false);
+  const [errorVerifyGoogleAccount, setErrorVerifyGoogleAccount] =
+    useState(false);
+  const [errorProgressGoogleAccount, setErrorProgressGoogleAccount] =
+    useState(false);
+  const [errorPlayServicesGoogleAccount, setErrorPlayServicesGoogleAccount] =
+    useState(false);
+  const [errorCancelledGoogleAccount, setErrorCancelledGoogleAccount] =
+    useState(false);
+  const [googleAccountDetails, setGoogleAccountDetails] = useState({});
   const {SafeArea, LoginMainPageSc} = ReusableCompString;
   const {MainSignIn} = PNGImages;
   const {
@@ -26,6 +39,7 @@ const LoginMainPage = (): React.JSX.Element => {
     mailBackgroundTheme,
     phoneBackgroundTheme,
     buttonThemeColor,
+    errorThemeColor,
   } = ReusableCompColors.lightTheme;
   const {splashText: splashTextBlack} = ReusableCompColors.darkTheme;
   const {GoogleLogo, AppleLogo, MailLogo} = SVGImages;
@@ -37,6 +51,10 @@ const LoginMainPage = (): React.JSX.Element => {
     ContinueApple,
     NotAccount,
     SignUp,
+    ErrorGoogleVerifyAccount,
+    ErrorSignInProgress,
+    ErrorGooglePlayServices,
+    ErrorCancelledSignInFlow,
   } = LanguageHook(LoginMainPageSc);
   const {Phone} = AppSymbol;
   const {
@@ -53,6 +71,7 @@ const LoginMainPage = (): React.JSX.Element => {
     notAccountTextContainer,
     notAccountTextSignUpContainer,
     titleTextContainer,
+    errorTextStyle,
   } = LoginMainPageStyle({
     backgroundTheme,
     splashText,
@@ -61,43 +80,62 @@ const LoginMainPage = (): React.JSX.Element => {
     mailBackgroundTheme,
     phoneBackgroundTheme,
     buttonThemeColor,
+    errorThemeColor,
   });
   const onPressPhoneHandler = async () => {
     navigation.navigate('LoginPhoneAuthentication');
   };
   const onPressEmailHandler = () => {};
-  const onPressGoogleHandler = () => {
-    // GoogleSignin.configure({
-    //   scopes: ['https://www.googleapis.com/auth/userinfo.profile'],
-    //   webClientId:
-    //     '528260113137-uod9foj8kmjk78clniqpe06s3ed40did.apps.googleusercontent.com',
-    //   iosClientId:
-    //     '528260113137-b13hq8d3e6u4gvd5lkiqasvp8r3m34gf.apps.googleusercontent.com',
-    //   offlineAccess: true,
-    // });
-    // GoogleSignin.hasPlayServices()
-    //   .then(hasPlayServices => {
-    //     if (hasPlayServices) {
-    //       GoogleSignin.signIn()
-    //         .then(userInfo => {
-    //           console.log('SUCCESS SIGN IN: ', JSON.stringify(userInfo));
-    //         })
-    //         .catch(error =>
-    //           console.log('ERROR SIGN IN: ', JSON.stringify(error)),
-    //         );
-    //     }
-    //   })
-    //   .catch(error => console.log('ERROR IS: ', JSON.stringify(error)));
+  const onPressGoogleHandler = async () => {
+    setIsActivityIndicatorVisible(true);
+    const googleUserDetails = await GetGoogleSignInVerified();
+    const {
+      userDetails,
+      errorFlag,
+      errorInProgressFlag,
+      errorPlayServicesFlag,
+      errorSignInFlag,
+    } = googleUserDetails;
+    if (errorFlag) {
+      setErrorVerifyGoogleAccount(true);
+      setErrorProgressGoogleAccount(false);
+      setErrorPlayServicesGoogleAccount(false);
+      setErrorCancelledGoogleAccount(false);
+      setIsActivityIndicatorVisible(false);
+      setGoogleAccountDetails({});
+    } else if (errorInProgressFlag) {
+      setErrorVerifyGoogleAccount(false);
+      setErrorProgressGoogleAccount(true);
+      setErrorPlayServicesGoogleAccount(false);
+      setErrorCancelledGoogleAccount(false);
+      setIsActivityIndicatorVisible(false);
+      setGoogleAccountDetails({});
+    } else if (errorPlayServicesFlag) {
+      setErrorVerifyGoogleAccount(false);
+      setErrorProgressGoogleAccount(false);
+      setErrorPlayServicesGoogleAccount(true);
+      setErrorCancelledGoogleAccount(false);
+      setIsActivityIndicatorVisible(false);
+      setGoogleAccountDetails({});
+    } else if (errorSignInFlag) {
+      setErrorVerifyGoogleAccount(false);
+      setErrorProgressGoogleAccount(false);
+      setErrorPlayServicesGoogleAccount(false);
+      setErrorCancelledGoogleAccount(true);
+      setIsActivityIndicatorVisible(false);
+      setGoogleAccountDetails({});
+    } else {
+      setErrorVerifyGoogleAccount(false);
+      setErrorProgressGoogleAccount(false);
+      setErrorPlayServicesGoogleAccount(false);
+      setErrorCancelledGoogleAccount(false);
+      setIsActivityIndicatorVisible(false);
+      setGoogleAccountDetails(userDetails);
+    }
   };
-  const onPressAppleHandler = async () => {
-    // try {
-    //   const response = await confirmData.confirm(input);
-    //   console.log('SUCCESS VERIFIED: ', JSON.stringify(response));
-    // } catch (error) {
-    //   console.log('ERROR IS: ', JSON.stringify(error));
-    // }
-  };
+  const onPressAppleHandler = async () => {};
   const onPressSignUpHandler = () => {};
+  const onVerifiedGoogleHandler = () => {};
   return (
     <ViewComp viewType={SafeArea} viewStyle={container}>
       <PNGImageComp PngImage={MainSignIn} PngImageStyle={imageContainer} />
@@ -126,6 +164,31 @@ const LoginMainPage = (): React.JSX.Element => {
         pressableImage={GoogleLogo}
         pressableImageWidth={googleLogoContainer}
       />
+      {errorVerifyGoogleAccount && (
+        <ErrorComp
+          errorTitle={ErrorGoogleVerifyAccount}
+          errorStyle={errorTextStyle}
+        />
+      )}
+      {errorProgressGoogleAccount && (
+        <ErrorComp
+          errorTitle={ErrorSignInProgress}
+          errorStyle={errorTextStyle}
+        />
+      )}
+      {errorPlayServicesGoogleAccount && (
+        <ErrorComp
+          errorTitle={ErrorGooglePlayServices}
+          errorStyle={errorTextStyle}
+        />
+      )}
+      {errorCancelledGoogleAccount && (
+        <ErrorComp
+          errorTitle={ErrorCancelledSignInFlow}
+          errorStyle={errorTextStyle}
+        />
+      )}
+      {googleAccountDetails && onVerifiedGoogleHandler()}
       <PressableComp
         pressableStyle={appleButtonContainer}
         pressableOnPress={onPressAppleHandler}
@@ -142,6 +205,7 @@ const LoginMainPage = (): React.JSX.Element => {
           pressableOnPress={onPressSignUpHandler}
         />
       </ViewComp>
+      {isGoogleActivityIndicatorVisible && <ActivityIndicatorComp />}
     </ViewComp>
   );
 };
