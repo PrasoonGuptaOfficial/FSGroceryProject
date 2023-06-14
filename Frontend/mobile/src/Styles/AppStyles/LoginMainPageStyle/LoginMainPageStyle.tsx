@@ -15,18 +15,14 @@ const LoginMainPageStyle = ({
   splashText,
   splashTextBlack,
   googleBackgroundTheme,
-  mailBackgroundTheme,
   phoneBackgroundTheme,
-  buttonThemeColor,
   errorThemeColor,
 }: {
   backgroundTheme: string;
   splashText: string;
   splashTextBlack: string;
   googleBackgroundTheme: string;
-  mailBackgroundTheme: string;
   phoneBackgroundTheme: string;
-  buttonThemeColor: string;
   errorThemeColor: string;
 }) => {
   return StyleSheet.create({
@@ -37,14 +33,15 @@ const LoginMainPageStyle = ({
     },
     imageContainer: {
       ...ImageContainerStyle.container,
-      height: HeightDimensionHook(0.4),
+      height: HeightDimensionHook(0.55),
     },
     titleTextContainer: {
       ...TextContainerStyle.container,
       color: splashTextBlack,
       fontSize: FontDimensionHook(24),
       fontFamily: 'RobotoCondensed-Bold',
-      marginVertical: HeightDimensionHook(0.01),
+      marginTop: HeightDimensionHook(0.05),
+      marginBottom: HeightDimensionHook(0.02),
     },
     appleButtonContainer: {
       ...PressableContainerStyle.container,
@@ -71,15 +68,6 @@ const LoginMainPageStyle = ({
     googleLogoContainer: {
       width: WidthDimensionHook(0.07),
     },
-    mailButtonContainer: {
-      ...PressableContainerStyle.container,
-      ...RowContainerStyle.container,
-      justifyContent: 'space-evenly',
-      backgroundColor: mailBackgroundTheme,
-      borderColor: mailBackgroundTheme,
-      padding: 5,
-      marginVertical: HeightDimensionHook(0.02),
-    },
     phoneButtonContainer: {
       ...PressableContainerStyle.container,
       ...RowContainerStyle.container,
@@ -92,23 +80,6 @@ const LoginMainPageStyle = ({
     phoneTextContainer: {
       ...TextContainerStyle.container,
       color: splashText,
-    },
-    notAccountContainer: {
-      ...RowContainerStyle.container,
-      marginVertical: HeightDimensionHook(0.04),
-    },
-    notAccountTextContainer: {
-      ...TextContainerStyle.container,
-      fontSize: FontDimensionHook(14),
-      color: splashTextBlack,
-      fontFamily: 'Roboto-Regular',
-      fontWeight: 'normal',
-    },
-    notAccountTextSignUpContainer: {
-      ...TextContainerStyle.container,
-      fontSize: FontDimensionHook(14),
-      color: buttonThemeColor,
-      fontFamily: 'Roboto-Regular',
     },
     errorTextStyle: {
       ...TextContainerStyle.container,

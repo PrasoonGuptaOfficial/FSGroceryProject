@@ -36,21 +36,16 @@ const LoginMainPage = (): React.JSX.Element => {
     backgroundTheme,
     splashText,
     googleBackgroundTheme,
-    mailBackgroundTheme,
     phoneBackgroundTheme,
-    buttonThemeColor,
     errorThemeColor,
   } = ReusableCompColors.lightTheme;
   const {splashText: splashTextBlack} = ReusableCompColors.darkTheme;
-  const {GoogleLogo, AppleLogo, MailLogo} = SVGImages;
+  const {GoogleLogo, AppleLogo} = SVGImages;
   const {
     GetYourGroceries,
     ContinuePhone,
-    ContinueEmail,
     ContinueGoogle,
     ContinueApple,
-    NotAccount,
-    SignUp,
     ErrorGoogleVerifyAccount,
     ErrorSignInProgress,
     ErrorGooglePlayServices,
@@ -64,12 +59,8 @@ const LoginMainPage = (): React.JSX.Element => {
     appleTextContainer,
     googleButtonContainer,
     googleLogoContainer,
-    mailButtonContainer,
     phoneButtonContainer,
     phoneTextContainer,
-    notAccountContainer,
-    notAccountTextContainer,
-    notAccountTextSignUpContainer,
     titleTextContainer,
     errorTextStyle,
   } = LoginMainPageStyle({
@@ -77,15 +68,12 @@ const LoginMainPage = (): React.JSX.Element => {
     splashText,
     splashTextBlack,
     googleBackgroundTheme,
-    mailBackgroundTheme,
     phoneBackgroundTheme,
-    buttonThemeColor,
     errorThemeColor,
   });
   const onPressPhoneHandler = async () => {
     navigation.navigate('LoginPhoneAuthentication');
   };
-  const onPressEmailHandler = () => {};
   const onPressGoogleHandler = async () => {
     setIsActivityIndicatorVisible(true);
     const googleUserDetails = await GetGoogleSignInVerified();
@@ -134,7 +122,6 @@ const LoginMainPage = (): React.JSX.Element => {
     }
   };
   const onPressAppleHandler = async () => {};
-  const onPressSignUpHandler = () => {};
   const onVerifiedGoogleHandler = () => {};
   return (
     <ViewComp viewType={SafeArea} viewStyle={container}>
@@ -147,14 +134,6 @@ const LoginMainPage = (): React.JSX.Element => {
         pressableTextStyle={appleTextContainer}
         pressableTextSubTitle={Phone}
         pressableSubTextStyle={phoneTextContainer}
-      />
-      <PressableComp
-        pressableStyle={mailButtonContainer}
-        pressableOnPress={onPressEmailHandler}
-        pressableTextTitle={ContinueEmail}
-        pressableTextStyle={appleTextContainer}
-        pressableImage={MailLogo}
-        pressableImageWidth={googleLogoContainer}
       />
       <PressableComp
         pressableStyle={googleButtonContainer}
@@ -197,14 +176,6 @@ const LoginMainPage = (): React.JSX.Element => {
         pressableImage={AppleLogo}
         pressableImageWidth={googleLogoContainer}
       />
-      <ViewComp viewType={SafeArea} viewStyle={notAccountContainer}>
-        <TextComp textTitle={NotAccount} textStyle={notAccountTextContainer} />
-        <PressableComp
-          pressableTextTitle={SignUp}
-          pressableTextStyle={notAccountTextSignUpContainer}
-          pressableOnPress={onPressSignUpHandler}
-        />
-      </ViewComp>
       {isGoogleActivityIndicatorVisible && <ActivityIndicatorComp />}
     </ViewComp>
   );
