@@ -195,6 +195,7 @@ const PhoneAuthenticationPage = (): React.JSX.Element => {
         <PhoneAuthenticationOtpVerifyModal
           PhoneAuthenticateOtpCloseHandler={onModalVerifyOtpCloseHandler}
           PhoneAuthenticationOtpVerify={phoneNumberOtpResponseChosen}
+          PhoneNumberInputValue={phoneNumberInput}
         />
       </ModalComp>
     </ViewComp>

@@ -13,10 +13,18 @@ import {PhoneAuthenticationOtpVerifyModalStyles} from '../../../Styles/Common/Co
 import {ReusableCompColors} from '../../../Constants/Colors/ReusableComp/ReusableCompColor';
 import LanguageHook from '../../../Hook/Language/LanguageHook';
 import {GetOtpVerified} from '../../../Helper/GetOtpVerified';
+import {useNavigation} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
+import {signInSuccess} from '../../../Redux/SignIn/SignInSlice';
 
 const PhoneAuthenticationOtpVerifyModal = (props: any): React.JSX.Element => {
-  const {PhoneAuthenticateOtpCloseHandler, PhoneAuthenticationOtpVerify} =
-    props;
+  const navigation: any = useNavigation();
+  const dispatch = useDispatch();
+  const {
+    PhoneAuthenticateOtpCloseHandler,
+    PhoneAuthenticationOtpVerify,
+    PhoneNumberInputValue,
+  } = props;
   const [enterOtpText, setEnterOtpText] = useState('');
   const [otpButtonVisibleHandler, onOtpButtonVisibleHandler] = useState(false);
   const [isActivityIndicatorVisible, setIsActivityIndicatorVisible] =
@@ -66,6 +74,16 @@ const PhoneAuthenticationOtpVerifyModal = (props: any): React.JSX.Element => {
       setIsOtpErrorVisible(false);
       PhoneAuthenticateOtpCloseHandler();
       setEnterOtpText('');
+      const userDetails = {
+        phoneNumber: PhoneNumberInputValue,
+      };
+      dispatch(
+        signInSuccess({
+          signedIn: true,
+          signedInDetails: userDetails,
+        }),
+      );
+      navigation.navigate('HomeStack', {screen: 'HomePage'});
     }
   };
   return (

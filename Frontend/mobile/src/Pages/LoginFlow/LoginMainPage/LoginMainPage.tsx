@@ -16,9 +16,12 @@ import {AppSymbol} from '../../../Constants/Symbols/App/AppSymbol';
 import LanguageHook from '../../../Hook/Language/LanguageHook';
 import {useNavigation} from '@react-navigation/native';
 import {GetGoogleSignInVerified} from '../../../Helper/GetGoogleSignInVerified';
+import {useDispatch} from 'react-redux';
+import {signInSuccess} from '../../../Redux/SignIn/SignInSlice';
 
 const LoginMainPage = (): React.JSX.Element => {
   const navigation: any = useNavigation();
+  const dispatch = useDispatch();
   const [isGoogleActivityIndicatorVisible, setIsActivityIndicatorVisible] =
     useState(false);
   const [errorVerifyGoogleAccount, setErrorVerifyGoogleAccount] =
@@ -119,6 +122,13 @@ const LoginMainPage = (): React.JSX.Element => {
       setErrorCancelledGoogleAccount(false);
       setIsActivityIndicatorVisible(false);
       setGoogleAccountDetails(userDetails);
+      dispatch(
+        signInSuccess({
+          signedIn: true,
+          signedInDetails: userDetails,
+        }),
+      );
+      navigation.navigate('HomeStack', {screen: 'HomePage'});
     }
   };
   const onPressAppleHandler = async () => {};

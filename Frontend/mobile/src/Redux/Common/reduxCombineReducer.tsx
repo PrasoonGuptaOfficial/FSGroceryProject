@@ -1,6 +1,6 @@
 import {combineReducers} from '@reduxjs/toolkit';
-import demoReducer from '../Demo/DemoSlice';
+import SignInReducer from '../SignIn/SignInSlice';
 
 export const reduxCombineReducer = combineReducers({
-  Demo: demoReducer,
+  SignIn: SignInReducer,
 });
