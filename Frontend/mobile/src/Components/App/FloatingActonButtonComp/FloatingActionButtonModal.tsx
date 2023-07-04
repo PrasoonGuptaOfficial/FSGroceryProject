@@ -51,12 +51,12 @@ const FloatingActionButtonModal = (props: any): React.JSX.Element => {
           textTitle={item.language}
           textStyle={languageTextStyleRenderItem}
         />
-        {floatingActionLanguage === item.language ? (
+        {floatingActionLanguage === item.language && (
           <TextComp
             textTitle={CheckMark}
             textStyle={symbolTextStyleRenderItem}
           />
-        ) : null}
+        )}
       </ViewComp>
     );
   };

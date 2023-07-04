@@ -66,3 +66,6 @@ yarn-error.log
 package-lock.json
 ios/Podfile.lock
 coverage
+android/app/debug.keystore
+android/app/client_secret_528260113137-7m3uq39ma275dm95n31cpu9232c53rpd.apps.googleusercontent.com.json
+.env

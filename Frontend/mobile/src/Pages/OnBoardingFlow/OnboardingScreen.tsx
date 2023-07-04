@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {
+  AlertComp,
   FloatingActionButtonComp,
   ImageBackgroundComp,
   ModalComp,
@@ -15,10 +16,13 @@ import LanguageContext from '../../Context/Language/LanguageContext';
 import {AppSymbol} from '../../Constants/Symbols/App/AppSymbol';
 import FloatingActionButtonModal from '../../Components/App/FloatingActonButtonComp/FloatingActionButtonModal';
 import LanguageHook from '../../Hook/Language/LanguageHook';
+import {useNavigation} from '@react-navigation/native';
 
 const OnboardingScreen = (): React.JSX.Element => {
+  const navigation: any = useNavigation();
   const [isFloatingButtonModalVisible, setIsFloatingButtonModalVisible] =
     useState(false);
+  const [isAlertPopUpVisible, setIsAlertPopUpVisible] = useState(false);
   const Language = useContext(LanguageContext);
   const {onLanguageChangeHandler, defaultLanguage} = Language;
   const [languageSelected, setLanguageSelected] = useState(defaultLanguage);
@@ -33,16 +37,26 @@ const OnboardingScreen = (): React.JSX.Element => {
     pressableContainer,
     pressableTextContainer,
   } = OnboardingPageStyle({splashText, buttonThemeColor});
-  const {SafeArea, Onboarding} = ReusableCompString;
+  const {SafeArea, Onboarding, Alert} = ReusableCompString;
   const {WelcomingStore, GrocerySlogan, GetStartedButton} =
     LanguageHook(Onboarding);
+  const {DoContinue, languageQues, Ok, Cancel} = LanguageHook(Alert);
   const {Plus} = AppSymbol;
-  const onPressChangeHandler = () => {};
+  const onPressChangeHandler = () => {
+    setIsAlertPopUpVisible(true);
+  };
+  const onAlertOptionChangeHandler = () => {
+    setIsAlertPopUpVisible(false);
+    navigation.navigate('LoginStack', {screen: 'LoginMainPage'});
+  };
   const onFloatingActionButtonPressedHandler = () => {
     setIsFloatingButtonModalVisible(true);
   };
   const onFloatingActionButtonCloseHandler = () => {
     setIsFloatingButtonModalVisible(false);
+  };
+  const onAlertPopUpCloseHandler = () => {
+    setIsAlertPopUpVisible(false);
   };
   const onLanguageSelectedHandler = (languageChosen: string) => {
     setLanguageSelected(languageChosen);
@@ -77,6 +91,17 @@ const OnboardingScreen = (): React.JSX.Element => {
             floatingButtonCloseHandler={onFloatingActionButtonCloseHandler}
             floatingActionButtonLanguageSelected={onLanguageSelectedHandler}
             floatingActionLanguage={languageSelected}
+          />
+        </ModalComp>
+        <ModalComp
+          modalVisibleFlag={isAlertPopUpVisible}
+          modalVisibleClose={onAlertPopUpCloseHandler}>
+          <AlertComp
+            alertText={`${DoContinue} ${defaultLanguage} ${languageQues}`}
+            alertOption={Ok}
+            alertSecOption={Cancel}
+            alertOptionPress={onAlertOptionChangeHandler}
+            alertOptionSecPress={onAlertPopUpCloseHandler}
           />
         </ModalComp>
       </ImageBackgroundComp>

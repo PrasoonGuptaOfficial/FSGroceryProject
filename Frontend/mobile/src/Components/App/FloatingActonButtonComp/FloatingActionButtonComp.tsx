@@ -1,5 +1,4 @@
 import React from 'react';
-import {} from 'react-native';
 import {TextComp, ViewComp} from '../../Common/commonComps.index';
 import ReusableCompString from '../../../Constants/Strings/ReusableComp/ReusableCompString';
 import {FloatingActionButtonCompStyle} from '../../../Styles/Common/Common';
@@ -15,9 +14,10 @@ const FloatingActionButtonComp = (props: any): React.JSX.Element => {
     splashText,
     isAndroid,
   });
+  const {TouchableComp} = ReusableCompString;
   return (
     <ViewComp
-      viewType={ReusableCompString.TouchableComp}
+      viewType={TouchableComp}
       viewStyle={container}
       viewOnPress={onActionButtonPress}>
       <TextComp

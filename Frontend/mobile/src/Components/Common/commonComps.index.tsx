@@ -7,6 +7,12 @@ import ImageBackgroundComp from '../Reusable/ImageBackgroundComp/ImageBackground
 import PressableComp from '../Reusable/PressableComp/PressableComp';
 import FloatingActionButtonComp from '../App/FloatingActonButtonComp/FloatingActionButtonComp';
 import ModalComp from '../Reusable/ModalComp/ModalComp';
+import AlertComp from '../Reusable/AlertComp/AlertComp';
+import TextInputComp from '../Reusable/TextInputComp/TextInputComp';
+import ErrorComp from '../Reusable/ErrorComp/ErrorComp';
+import ActivityIndicatorComp from '../Reusable/ActivityIndicatorComp/ActivityIndicatorComp';
+import PhoneAuthenticationButtonComp from '../App/PhoneAuthenticationModalComp/PhoneAuthenticationButtonComp';
+import PhoneAuthenticationOtpVerifyModal from '../App/PhoneAuthenticationModalComp/PhoneAuthenticationOtpVerifyModal';
 
 export {
   ViewComp,
@@ -18,4 +24,10 @@ export {
   PressableComp,
   FloatingActionButtonComp,
   ModalComp,
+  AlertComp,
+  TextInputComp,
+  ErrorComp,
+  ActivityIndicatorComp,
+  PhoneAuthenticationButtonComp,
+  PhoneAuthenticationOtpVerifyModal,
 };
